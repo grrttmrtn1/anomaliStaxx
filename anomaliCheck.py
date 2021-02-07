@@ -39,3 +39,11 @@ class anomaliCheck:
         for domain in observables:
             domains.append(str(domain['indicator']))
         return domains
+    def parseDomains(self, domains):
+        parsedDomains = []
+        for domain in domains:
+            if 'http' in domain:
+                parsedDomains.append(domain.split('//')[1].split('/')[0])
+            else:
+                parsedDomains.append(domain)
+        return parsedDomains
