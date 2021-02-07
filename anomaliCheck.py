@@ -37,5 +37,5 @@ class anomaliCheck:
         observables = self.anomali_webCall('intelligence', header, data)
         domains = []
         for domain in observables:
-            domains.append(domain['indicator'])
+            domains.append(str(domain['indicator']))
         return domains
